@@ -1,0 +1,67 @@
+﻿@model Health_Insuarance.Models.ContactFormClass
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-6">Contact Us</h1>
+
+</div>
+
+
+<hr />
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-9">
+            <form asp-action="Create">
+
+                @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Userid" class="control-label"></label>
+            <input asp-for="Userid" class="form-control" />
+            <span asp-validation-for="Userid" class="text-danger"></span>
+        </div>*@
+                <div class="form-group">
+
+                    <label asp-for="Firstname" class="control-label"></label>
+                    <input asp-for="Firstname" class="form-control" required="required" data-error="Firstname is required." />
+                    <span asp-validation-for="Firstname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Lastname" class="control-label"></label>
+                    <input asp-for="Lastname" class="form-control" required="required" data-error="Lastname is required." />
+                    <span asp-validation-for="Lastname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" required="required" data-error="Email is required." />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mobileno" class="control-label"></label>
+                    <input asp-for="Mobileno" class="form-control" required="required" data-error="Mobile is required." />
+                    <span asp-validation-for="Mobileno" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Message" class="control-label"></label>
+                    <input asp-for="Message" class="form-control" required="required" data-error="Message is required." />
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success btn-send  pt-2 btn-block" value="Submit" />
+                </div>
+                
+                <b>@ViewData["Message"]</b>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
